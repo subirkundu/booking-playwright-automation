@@ -7,7 +7,7 @@ export default defineConfig({
   reporter: 'html',
 
   use: {
-    browserName: 'chromium',
+    browserName: 'firefox',
     headless: false, 
     screenshot: 'only-on-failure',
     trace: 'on-first-retry',
