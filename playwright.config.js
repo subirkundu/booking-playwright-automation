@@ -11,7 +11,7 @@ export default defineConfig({
     headless: false, 
     screenshot: 'only-on-failure',
     trace: 'on-first-retry',
-    //...devices ['iPhone 15 Pro Max']
-    viewport: { width: 1920, height: 1080 },
+    ...devices ['iPhone 15 Pro Max']
+    //viewport: { width: 1920, height: 1080 },
   },
 });
