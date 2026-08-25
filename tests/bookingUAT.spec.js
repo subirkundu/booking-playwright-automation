@@ -3,7 +3,7 @@ const { HotelBook } = require('../pageobjects/HotelBook');
 const { FlightBook } = require('../pageobjects/FlightBook');
 const { AttractionsBook } = require('../pageobjects/AttractionsBook');
 
-test.only('Hotel Booking UAT', async ({ page }) => {
+test('Hotel Booking UAT', async ({ page }) => {
 
   const numberOfChildren = 3;
   const ageDropdowns = page.getByRole('combobox');
