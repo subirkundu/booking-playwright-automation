@@ -27,8 +27,6 @@ test('Hotel Booking UAT', async ({ page }) => {
   await hotelBookPage.validatePropertyPage(newPage, lowestPriceData.lowestPrice);
 });
 
-
-
 test('Flights Booking UAT', async ({ page }) => {
 
   const flightBookPage = new FlightBook(page);
@@ -40,8 +38,6 @@ test('Flights Booking UAT', async ({ page }) => {
   await flightBookPage.validateFlightPage(highestPrice);// Validate that the price on the next page matches the selected flight's highest price
 
 });
-
-
 
 test('Attractions Page UAT', async ({ page }) => {
 
