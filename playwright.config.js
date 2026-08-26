@@ -6,12 +6,22 @@ export default defineConfig({
 
   reporter: 'html',
 
+//   use: {
+//     browserName: 'chromium',
+//     headless: false, 
+//     screenshot: 'only-on-failure',
+//     trace: 'on-first-retry',
+//     //...devices ['iPhone 15 Pro Max']
+//     //viewport: { width: 1920, height: 1080 },
+//   },
+// });
+
   use: {
     browserName: 'chromium',
     headless: false, 
     screenshot: 'only-on-failure',
     trace: 'on-first-retry',
-    //...devices ['iPhone 15 Pro Max']
+    ...devices ['Pixel 5']
     //viewport: { width: 1920, height: 1080 },
   },
 });

@@ -3,7 +3,7 @@ const { HotelBook } = require('../pageobjects/HotelBook');
 const { FlightBook } = require('../pageobjects/FlightBook');
 const { AttractionsBook } = require('../pageobjects/AttractionsBook');
 
-test('Hotel Booking UAT', async ({ page }) => {
+test.only('Hotel Booking UAT', async ({ page }) => {
 
   const numberOfChildren = 3;
   const ageDropdowns = page.getByRole('combobox');
@@ -27,7 +27,7 @@ test('Hotel Booking UAT', async ({ page }) => {
   await hotelBookPage.validatePropertyPage(newPage, lowestPriceData.lowestPrice);
 });
 
-test.only('Flights Booking UAT', async ({ page }) => {
+test('Flights Booking UAT', async ({ page }) => {
 
   const flightBookPage = new FlightBook(page);
   await flightBookPage.goTo();

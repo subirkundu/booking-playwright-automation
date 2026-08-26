@@ -4,9 +4,10 @@ class HotelBook {
     constructor(page) {
         this.page = page;
 
-        this.dismiss1 = page.getByRole('button', {name: 'Dismiss sign-in info.'});
+        this.dismiss1 = page.getByRole('button', { name: 'Dismiss sign-in info.' });
 
-        this.going = page.getByPlaceholder("Where are you going?");
+        this.goingDesktop = page.getByPlaceholder("Where are you going?"); //For Desktop
+        this.goingMobile = page.getByPlaceholder("Around current location"); // For Mobile
         this.hardLoc = page.locator('.efbfd2b849').first();
         this.flexLoc = page.getByRole('tab', { name: "I'm flexible" });
         this.week1 = page.getByText('A week', { exact: true });
@@ -46,8 +47,20 @@ class HotelBook {
     }
 
     async miscSTeps() {
-        await this.dismiss1.click();
-        await this.going.pressSequentially("Cox's Bazar");
+        if (await this.dismiss1.isVisible({ timeout: 3000 })) {
+            await this.dismiss1.click();
+        }
+
+        let goingField;
+
+        if (await this.goingDesktop.isVisible({ timeout: 3000 })) {
+            goingField = this.goingDesktop;
+        } else {
+            goingField = this.goingMobile;
+        }
+
+        await goingField.pressSequentially("Cox's Bazar");
+
         await this.page.waitForTimeout(2000);
         await this.hardLoc.click();
         await this.flexLoc.click();
