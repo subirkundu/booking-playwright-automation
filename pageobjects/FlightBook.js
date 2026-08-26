@@ -29,7 +29,6 @@ class FlightBook {
         await this.originL.fill('Toronto Canada');
         await this.page.waitForTimeout(300);
         await this.destinationL.fill('Kolkata India');
-
     }
 
     async selectDate() {
@@ -79,7 +78,6 @@ class FlightBook {
         await this.page.locator(`[aria-label="${returnLabel}"]`).click();
 
         // click on the destination and select the dates ends here. We can use the AI Powered here are well as it's dynamic
-
     }
 
     async reSelect() {
@@ -102,7 +100,6 @@ class FlightBook {
         await this.kolSelect.check(); // Need AI Powered here. Sometimes it fails to click on the checkbox
         await this.page.waitForTimeout(700);
         await this.search.click();
-
     }
 
     async selectHighestPricedFlight() {
@@ -142,7 +139,6 @@ class FlightBook {
             await highestPriceCard.getByRole('link', { name: 'Select' }).click();
         }
         return highestPrice; // Return the highest price so the test can use it for validation
-
     }
 
     async validateFlightPage(highestPrice) {
@@ -159,7 +155,6 @@ class FlightBook {
         // Verify the selected flight price is unchanged
         expect(nextPagePrice).toBe(highestPrice);
         console.log("Both Price Matched!!");
-
     }
 
 }
