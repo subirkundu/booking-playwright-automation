@@ -6,8 +6,7 @@ class HotelBook {
 
         this.dismiss1 = page.getByRole('button', { name: 'Dismiss sign-in info.' });
 
-        this.goingDesktop = page.getByPlaceholder("Where are you going?"); //For Desktop
-        this.goingMobile = page.getByPlaceholder("Around current location"); // For Mobile
+        this.going = page.getByPlaceholder("Where are you going?"); //For Desktop
         this.hardLoc = page.locator('.efbfd2b849').first();
         this.flexLoc = page.getByRole('tab', { name: "I'm flexible" });
         this.week1 = page.getByText('A week', { exact: true });
@@ -47,20 +46,8 @@ class HotelBook {
     }
 
     async miscSTeps() {
-        if (await this.dismiss1.isVisible({ timeout: 3000 })) {
-            await this.dismiss1.click();
-        }
-
-        let goingField;
-
-        if (await this.goingDesktop.isVisible({ timeout: 3000 })) {
-            goingField = this.goingDesktop;
-        } else {
-            goingField = this.goingMobile;
-        }
-
-        await goingField.pressSequentially("Cox's Bazar");
-
+        await this.dismiss1.click();
+        await this.going.pressSequentially("Cox's Bazar");
         await this.page.waitForTimeout(2000);
         await this.hardLoc.click();
         await this.flexLoc.click();
@@ -94,8 +81,9 @@ class HotelBook {
             await this.room.click();
             await this.page.waitForTimeout(300);
         }
-
+        await this.page.waitForTimeout(300);
         await this.button2.click();
+        await this.page.waitForTimeout(300);
         await this.button3.click();
         await this.page.waitForTimeout(300);
 
