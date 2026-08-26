@@ -16,7 +16,6 @@ class AttractionsBook {
         this.bReview = page.getByText('Best reviewed', { exact: true });
         //Filters End
 
-
     }
 
     async goTo() {
@@ -103,7 +102,6 @@ class AttractionsBook {
         await this.night.click();
         await this.page.waitForTimeout(400);
         await this.bReview.click();
-
     }
 
     async findLowestPriceAndValidate() {
