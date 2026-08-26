@@ -50,42 +50,32 @@ class FlightBook {
                 year: 'numeric',
             });
 
-const departureLabel = formatDate(departureDate);
-const returnLabel = formatDate(returnDate);
+        const departureLabel = formatDate(departureDate);
+        const returnLabel = formatDate(returnDate);
 
-console.log('Departure Date:', departureLabel);
-console.log('Return Date:', returnLabel);
+        console.log('Departure Date:', departureLabel);
+        console.log('Return Date:', returnLabel);
 
-// Create dynamic locators after the labels are available
-const departureLocator = this.page.locator(
-    `[aria-label="${departureLabel}"]`
-);
-
-const returnLocator = this.page.locator(
-    `[aria-label="${returnLabel}"]`
-);
+        // Create dynamic locators after the labels are available
+        const departureLocator = this.page.locator(`[aria-label="${departureLabel}"]`);
+        const returnLocator = this.page.locator(`[aria-label="${returnLabel}"]`);
 
 
-// Select Departure Date
-await this.departure.click();
+        // Select Departure Date
+        await this.departure.click();
 
-while (!(await departureLocator.isVisible())) {
-    await this.page
-        .getByRole('button', { name: /Next Month/i })
-        .click();
-}
+        while (!(await departureLocator.isVisible())) {
+            await this.page.getByRole('button', { name: /Next Month/i }).click();
+        }
 
-await departureLocator.click();
+        await departureLocator.click();
 
+        // Select Return Date
+        while (!(await returnLocator.isVisible())) {
+            await this.page.getByRole('button', { name: /Next Month/i }).click();
+        }
 
-// Select Return Date
-while (!(await returnLocator.isVisible())) {
-    await this.page
-        .getByRole('button', { name: /Next Month/i })
-        .click();
-}
-
-await returnLocator.click();
+        await returnLocator.click();
 
     }
 
@@ -157,9 +147,7 @@ await returnLocator.click();
         const nextPagePriceText = await this.page.locator('.zQS2-display-price').textContent();
 
         // Convert "Tk 156,374" → 156374
-        const nextPagePrice = Number(
-            nextPagePriceText.replace(/\D/g, '')
-        );
+        const nextPagePrice = Number(nextPagePriceText.replace(/\D/g, ''));
 
         // Verify the selected flight price is unchanged
         expect(nextPagePrice).toBe(highestPrice);
