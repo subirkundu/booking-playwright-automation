@@ -37,9 +37,6 @@ class HotelBook {
         this.prices = page.getByTestId("price-and-discounted-price");
         this.propertyCards = page.getByTestId("property-card-container");
 
-
-
-
     }
 
     async goTo() {
@@ -191,5 +188,3 @@ class HotelBook {
 }
 
 module.exports = { HotelBook };
-
-
