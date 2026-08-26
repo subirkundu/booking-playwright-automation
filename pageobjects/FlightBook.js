@@ -50,34 +50,43 @@ class FlightBook {
                 year: 'numeric',
             });
 
-        const departureLabel = formatDate(departureDate);
-        const returnLabel = formatDate(returnDate);
+const departureLabel = formatDate(departureDate);
+const returnLabel = formatDate(returnDate);
 
-        console.log('Departure Date:', departureLabel);
-        console.log('Return Date:', returnLabel);
+console.log('Departure Date:', departureLabel);
+console.log('Return Date:', returnLabel);
 
-        // Select Departure Date
-        await this.departure.click();
+// Create dynamic locators after the labels are available
+const departureLocator = this.page.locator(
+    `[aria-label="${departureLabel}"]`
+);
 
-        while (
-            !(await this.page.locator(`[aria-label="${departureLabel}"]`).isVisible())
-        ) {
-            await this.page.getByRole('button', { name: /Next Month/i }).click();
-        }
-
-        await this.page.locator(`[aria-label="${departureLabel}"]`).click();
+const returnLocator = this.page.locator(
+    `[aria-label="${returnLabel}"]`
+);
 
 
-        // Select Return Date
-        while (
-            !(await this.page.locator(`[aria-label="${returnLabel}"]`).isVisible())
-        ) {
-            await this.page.getByRole('button', { name: /Next Month/i }).click();
-        }
+// Select Departure Date
+await this.departure.click();
 
-        await this.page.locator(`[aria-label="${returnLabel}"]`).click();
+while (!(await departureLocator.isVisible())) {
+    await this.page
+        .getByRole('button', { name: /Next Month/i })
+        .click();
+}
 
-        // click on the destination and select the dates ends here. We can use the AI Powered here are well as it's dynamic
+await departureLocator.click();
+
+
+// Select Return Date
+while (!(await returnLocator.isVisible())) {
+    await this.page
+        .getByRole('button', { name: /Next Month/i })
+        .click();
+}
+
+await returnLocator.click();
+
     }
 
     async reSelect() {

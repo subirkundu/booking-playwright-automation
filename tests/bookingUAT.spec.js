@@ -27,7 +27,7 @@ test('Hotel Booking UAT', async ({ page }) => {
   await hotelBookPage.validatePropertyPage(newPage, lowestPriceData.lowestPrice);
 });
 
-test('Flights Booking UAT', async ({ page }) => {
+test.only('Flights Booking UAT', async ({ page }) => {
 
   const flightBookPage = new FlightBook(page);
   await flightBookPage.goTo();
