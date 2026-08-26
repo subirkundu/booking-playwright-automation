@@ -13,7 +13,7 @@ class FlightBook {
         this.increment = page.getByRole('button', { name: 'Increment' }).first();
         this.un1 = page.locator(".RxNS-button-container");
         this.clickDis = page.getByRole('button', { name: 'Dismiss' });
-        this.canSelect = page.getByRole('option', { name: 'Toronto, Ontario, Canada' }).locator('[id="0"]');
+        this.canSelect = page.getByRole('option', { name: 'Toronto, Ontario, Canada' }).locator('[id="0"]'); // Need AI Powred here as well. Sometimes it's moves too first and got the option failed to check
         this.kolSelect = page.locator('[id="0"]');
         this.search = page.getByRole('button', { name: 'Search' });
 
@@ -86,10 +86,11 @@ class FlightBook {
         await expect(this.page.getByText('An error occurred while trying to perform your search')).toBeVisible(); // :white_check_mark: Verify the error message is visible
         console.log("Error Message Detected");
         await this.clickDis.click();
+        await this.page.waitForTimeout(2000);
         await this.originL.clear();
-        await this.page.waitForTimeout(700);
+        await this.page.waitForTimeout(2000);
         await this.originL.fill('Toronto Canada');
-        await this.page.waitForTimeout(700); // Need AI Powred here as well. Sometimes it's moves too first and got the option failed to check
+        await this.page.waitForTimeout(2000); // Need AI Powred here as well. Sometimes it's moves too first and got the option failed to check
         await this.canSelect.check();
         await this.page.waitForTimeout(700);
         await this.destinationL.clear();
