@@ -1,0 +1,18 @@
+Verified Successfully!
+All Prices: [
+  'BDT 72,452', 'BDT 46,971',
+  'BDT 35,735', 'BDT 30,086',
+  'BDT 49,734', 'BDT 33,156',
+  'BDT 63,549', 'BDT 34,998',
+  'BDT 20,262', 'BDT 21,490',
+  'BDT 30,700', 'BDT 37,577',
+  'BDT 23,946', 'BDT 54,597',
+  'BDT 24,867', 'BDT 34,384',
+  'BDT 36,840', 'BDT 46,050',
+  'BDT 49,734', 'BDT 47,585'
+]
+Lowest Price: 20262
+Lowest Price: 20262
+Lowest Price Index: 8
+Second Page Price: 20262
+Both Page Price Matched

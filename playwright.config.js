@@ -9,7 +9,10 @@ export default defineConfig({
     timeout: 70 * 1000,  // Timeout for assertions (60s)
   },
 
-  reporter: 'html',
+  reporter: [
+    ['html'],
+    ['allure-playwright']
+],
 
   use: {
     headless: false,
