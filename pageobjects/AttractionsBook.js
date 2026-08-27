@@ -134,7 +134,6 @@ class AttractionsBook {
 
         ]);
 
-
         await page1.waitForLoadState('networkidle');
         const newPageTitle = await page1.locator('h1:visible').textContent(); // Get title from the new page
 
@@ -144,8 +143,6 @@ class AttractionsBook {
         expect(newPageTitle.trim()).toBe(previousPageTitle.trim()); // Verify both titles match
         console.log('Title Verified! Both titles match: ' + newPageTitle.trim());
     }
-
-
 
 
 }
