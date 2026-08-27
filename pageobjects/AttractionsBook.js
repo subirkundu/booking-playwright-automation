@@ -69,9 +69,7 @@ class AttractionsBook {
 
         while (!(await startDateLocator.isVisible())) {
 
-            await this.page
-                .getByRole('button', { name: 'Next month' })
-                .click();
+            await this.page.getByRole('button', { name: 'Next month' }).click();
         }
 
         await startDateLocator.click();
@@ -129,7 +127,6 @@ class AttractionsBook {
         const [page1] = await Promise.all([
 
             this.page.context().waitForEvent('page'),
-
             card.getByTestId('card-title').click()
 
         ]);

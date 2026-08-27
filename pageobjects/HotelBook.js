@@ -167,11 +167,7 @@ class HotelBook {
         await newPage.waitForLoadState();
 
         const secondPagePriceText = await newPage.locator(".prco-valign-middle-helper").nth(0).textContent();
-
-        const secondPagePrice = Number(
-            secondPagePriceText.replace(/\D/g, '')
-        );
-
+        const secondPagePrice = Number(secondPagePriceText.replace(/\D/g, ''));
         console.log("Second Page Price:", secondPagePrice);
 
         // Verify both prices match
