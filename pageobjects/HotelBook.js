@@ -176,7 +176,6 @@ class HotelBook {
 
         // Verify both prices match
         await expect(secondPagePrice).toBe(lowestPrice);
-
         console.log("Both Page Price Matched");
 
         // Reserve the property
