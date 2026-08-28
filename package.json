@@ -13,5 +13,9 @@
     "@types/node": "^26.2.0",
     "allure-commandline": "^2.43.0",
     "allure-playwright": "^3.11.0"
+  },
+  "dependencies": {
+    "@google/genai": "^2.19.0",
+    "dotenv": "^17.4.2"
   }
 }
