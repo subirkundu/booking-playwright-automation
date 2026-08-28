@@ -63,9 +63,7 @@ class AttractionsBook {
 
         // CHANGED: Use getByRole('checkbox') instead of getByLabel().
         // Reason: Booking.com has two elements with the same aria-label for a date: gridcell + checkbox. getByLabel() matched both and caused a strict-mode error.
-        const startDateLocator = this.page.getByRole('checkbox', {
-            name: startDateLabel
-        });
+        const startDateLocator = this.page.getByRole('checkbox', {name: startDateLabel});
 
         while (!(await startDateLocator.isVisible())) {
 
@@ -76,9 +74,7 @@ class AttractionsBook {
 
         // Select End Date
         // CHANGED: Same fix here: target the actual selectable checkbox instead of the ambiguous aria-label.
-        const endDateLocator = this.page.getByRole('checkbox', {
-            name: endDateLabel
-        });
+        const endDateLocator = this.page.getByRole('checkbox', {name: endDateLabel});
 
         while (!(await endDateLocator.isVisible())) {
             await this.page.getByRole('button', { name: 'Next month' }).click();
