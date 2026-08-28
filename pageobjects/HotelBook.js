@@ -157,9 +157,7 @@ class HotelBook {
 
     async openLowestPricedProperty(lowestPriceIndex) {
 
-        const propertyCards = this.page.getByTestId(
-            "property-card-container"
-        );
+        const propertyCards = this.page.getByTestId("property-card-container");
 
         const [newPage] = await Promise.all([
             this.page.context().waitForEvent('page'),
