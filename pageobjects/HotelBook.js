@@ -59,11 +59,7 @@ class HotelBook {
         // The original locator is intentionally broken.
         // AI will suggest a replacement if the locator fails.
 
-        await healClick(
-            this.page,
-            this.week1,
-            "page.getByText('A Week', { exact: true })"
-        );
+        await healClick(this.page,this.week1,"page.getByText('A Week', { exact: true })");
 
         await this.month1.click();
         await this.datePick1.click();
