@@ -1,14 +1,11 @@
 import { defineConfig, devices } from '@playwright/test';
-
 export default defineConfig({
 
   testDir: './tests',
-
   timeout: 70 * 1000, // Global timeout for each test (60s)
   expect: {
     timeout: 70 * 1000,  // Timeout for assertions (60s)
   },
-
   reporter: [
     ['html'],
     ['allure-playwright']
