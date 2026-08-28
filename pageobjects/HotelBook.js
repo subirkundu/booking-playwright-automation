@@ -12,6 +12,7 @@ class HotelBook {
         this.flexLoc = page.getByRole('tab', { name: "I'm flexible" });
         // Temporary: intentionally broken locator for AI healing test
         this.week1 = page.getByText('A Week', { exact: true });
+        
         // Original working locator:
         // this.week1 = page.getByText('A week', { exact: true });
         this.month1 = page.locator('.fb1145c89b', { hasText: 'Jan' });
