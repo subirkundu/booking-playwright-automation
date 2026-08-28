@@ -19,6 +19,7 @@ class FlightBook {
 
     }
     async goTo() {
+
         await this.page.goto('https://www.booking.com/');
     }
 
@@ -142,7 +143,6 @@ class FlightBook {
     }
 
     async validateFlightPage(highestPrice) {
-
 
         // Get price from the next page
         const nextPagePriceText = await this.page.locator('.zQS2-display-price').textContent();
