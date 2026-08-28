@@ -9,7 +9,10 @@ class HotelBook {
         this.going = page.getByPlaceholder("Where are you going?"); //For Desktop
         this.hardLoc = page.locator('.efbfd2b849').first();
         this.flexLoc = page.getByRole('tab', { name: "I'm flexible" });
-        this.week1 = page.getByText('A week', { exact: true });
+        // Temporary: intentionally broken locator for AI healing test
+        this.week1 = page.getByText('A Week', { exact: true });
+        // Original working locator:
+        // this.week1 = page.getByText('A week', { exact: true });
         this.month1 = page.locator('.fb1145c89b', { hasText: 'Jan' });
         this.datePick1 = page
             .getByTestId('searchbox-datepicker-flexible-dates-container')
@@ -51,7 +54,17 @@ class HotelBook {
         await this.page.waitForTimeout(2000);
         await this.hardLoc.click();
         await this.flexLoc.click();
-        await this.week1.click();
+
+        // AI Self-Healing:
+        // The original locator is intentionally broken.
+        // AI will suggest a replacement if the locator fails.
+
+        await healClick(
+            this.page,
+            this.week1,
+            "page.getByText('A Week', { exact: true })"
+        );
+
         await this.month1.click();
         await this.datePick1.click();
         await this.unKnown.click();
