@@ -93,6 +93,4 @@ IMPORTANT RULES
 
 }
 
-module.exports = {
-    buildFailurePrompt
-};
+module.exports = {buildFailurePrompt};

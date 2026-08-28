@@ -3,24 +3,22 @@ const { HotelBook } = require('../pageobjects/HotelBook');
 const { FlightBook } = require('../pageobjects/FlightBook');
 const { AttractionsBook } = require('../pageobjects/AttractionsBook');
 
-const { collectFailure } =require('../ai/failureCollector');
+const { collectFailure } = require('../ai/failureCollector');
+const { buildFailurePrompt } = require('../ai/promptBuilder');
+const { analyzeFailure, parseAnalysis, saveFailureReport } = require('../ai/failureAnalyzer');
+const { isLocatorFailure, getLocatorSuggestion } = require('../ai/locatorAdvisor');
 
-const { buildFailurePrompt } =require('../ai/promptBuilder');
+test.afterEach(async ({ page }, testInfo) => {
+  if (testInfo.status !== testInfo.expectedStatus) {
+    await page.screenshot({ path: testInfo.outputPath('failure.png'), fullPage: true });
 
-const {analyzeFailure,parseAnalysis,saveFailureReport} = require('../ai/failureAnalyzer');
-
-const {isLocatorFailure,getLocatorSuggestion} = require('../ai/locatorAdvisor');
-
-test.afterEach(async ({ page }, testInfo) => {if (testInfo.status !== testInfo.expectedStatus) {
-    await page.screenshot({path: testInfo.outputPath('failure.png'),fullPage: true});
-
-    const failureData =await collectFailure(page, testInfo);
+    const failureData = await collectFailure(page, testInfo);
 
     // Phase 1 - Failure Analysis
-    const failurePrompt =buildFailurePrompt(failureData);
-    const aiResponse =await analyzeFailure(failurePrompt);
+    const failurePrompt = buildFailurePrompt(failureData);
+    const aiResponse = await analyzeFailure(failurePrompt);
 
-    const analysis =parseAnalysis(aiResponse);
+    const analysis = parseAnalysis(aiResponse);
 
     console.log(
       '\n========== AI FAILURE ANALYSIS ==========\n'
@@ -74,7 +72,9 @@ test.afterEach(async ({ page }, testInfo) => {if (testInfo.status !== testInfo.e
   }
 });
 
-test('Hotel Booking UAT', async ({ page }) => {
+test.only('Hotel Booking UAT', async ({ page }) => {
+
+  test.setTimeout(120000);
 
   const numberOfChildren = 3;
   const ageDropdowns = page.getByRole('combobox');
@@ -116,7 +116,7 @@ test('Attractions Page UAT', async ({ page }) => {
   await attractionsBookpage.goTo();
   await attractionsBookpage.searchAttraction();
   await attractionsBookpage.selectDate();
-  await attractionsBookpage.filtersA ();
+  await attractionsBookpage.filtersA();
   await attractionsBookpage.findLowestPriceAndValidate();
 
 });

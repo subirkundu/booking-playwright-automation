@@ -1,4 +1,5 @@
 const { expect } = require('@playwright/test');
+const { healClick } = require('../ai/locatorAdvisor');
 
 class HotelBook {
     constructor(page) {

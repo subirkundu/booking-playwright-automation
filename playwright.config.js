@@ -43,20 +43,3 @@ export default defineConfig({
 
   ],
 });
-
-// import { defineConfig, devices } from '@playwright/test';
-// export default defineConfig({
-//   testDir: './tests',
-//   timeout: 60 * 1000, // Global timeout for each test (40s)
-//   expect: { timeout: 60 * 1000 }, // Timeout for assertions (40s)
-
-//   reporter: 'html',
-
-//     use: {
-//     browserName: 'firefox',
-//     headless: false, 
-//     screenshot: 'only-on-failure',
-//     trace: 'on-first-retry',
-//     viewport: { width: 1920, height: 1080 },
-//   },
-// });

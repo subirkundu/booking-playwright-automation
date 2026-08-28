@@ -7,9 +7,7 @@ function extractFailureLocation(stack) {
         return null;
     }
 
-    const match = stack.match(
-        /\s+at .*?\(?([A-Za-z]:\\.*?):(\d+):(\d+)\)?/
-    );
+    const match = stack.match(/\s+at .*?\(?([A-Za-z]:\\.*?):(\d+):(\d+)\)?/);
 
     if (!match) {
         return null;
@@ -32,17 +30,13 @@ function getSourceContext(filePath, lineNumber) {
 
     try {
 
-        const source =
-            fs.readFileSync(filePath, 'utf8');
+        const source = fs.readFileSync(filePath, 'utf8');
 
-        const lines =
-            source.split(/\r?\n/);
+        const lines = source.split(/\r?\n/);
 
-        const startLine =
-            Math.max(1, lineNumber - 5);
+        const startLine = Math.max(1, lineNumber - 5);
 
-        const endLine =
-            Math.min(lines.length, lineNumber + 5);
+        const endLine = Math.min(lines.length, lineNumber + 5);
 
         const context = [];
 
@@ -68,8 +62,7 @@ function getSourceContext(filePath, lineNumber) {
 
 async function collectFailure(page, testInfo) {
 
-    const screenshotPath =
-        testInfo.outputPath('failure.png');
+    const screenshotPath = testInfo.outputPath('failure.png');
 
     const traceAttachment =
         testInfo.attachments.find(
@@ -77,14 +70,11 @@ async function collectFailure(page, testInfo) {
                 attachment.name === 'trace'
         );
 
-    const errorMessage =
-        testInfo.error?.message || null;
+    const errorMessage = testInfo.error?.message || null;
 
-    const stackTrace =
-        testInfo.error?.stack || null;
+    const stackTrace = testInfo.error?.stack || null;
 
-    const failureLocation =
-        extractFailureLocation(stackTrace);
+    const failureLocation = extractFailureLocation(stackTrace);
 
     const sourceContext =
         failureLocation

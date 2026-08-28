@@ -1,13 +1,8 @@
 require('dotenv').config();
-
 const fs = require('fs');
 const path = require('path');
-
 const { GoogleGenAI } = require('@google/genai');
-
-const ai = new GoogleGenAI({
-    apiKey: process.env.GEMINI_API_KEY
-});
+const ai = new GoogleGenAI({apiKey: process.env.GEMINI_API_KEY});
 
 
 async function analyzeFailure(prompt) {
@@ -19,7 +14,6 @@ async function analyzeFailure(prompt) {
 
     return response.text;
 }
-
 
 function parseAnalysis(responseText) {
 
@@ -51,27 +45,11 @@ function parseAnalysis(responseText) {
 
 function saveFailureReport(failureData, analysis) {
 
-    const reportDirectory = path.join(
-        process.cwd(),
-        'ai-reports'
-    );
-
-    fs.mkdirSync(reportDirectory, {
-        recursive: true
-    });
-
-    const safeTestName = failureData.testName
-        .replace(/[^a-z0-9]/gi, '-')
-        .toLowerCase();
-
-    const fileName =
-        `${safeTestName}-${failureData.project}.json`;
-
-    const reportPath = path.join(
-        reportDirectory,
-        fileName
-    );
-
+    const reportDirectory = path.join(process.cwd(),'ai-reports');
+    fs.mkdirSync(reportDirectory, {recursive: true});
+    const safeTestName = failureData.testName.replace(/[^a-z0-9]/gi, '-').toLowerCase();
+    const fileName =`${safeTestName}-${failureData.project}.json`;
+    const reportPath = path.join(reportDirectory,fileName);
     const report = {
 
         testName: failureData.testName,
