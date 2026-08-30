@@ -134,6 +134,4 @@ async function collectFailure(page, testInfo) {
     return failureData;
 }
 
-module.exports = {
-    collectFailure
-};
+module.exports = {collectFailure};

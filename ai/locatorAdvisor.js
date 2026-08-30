@@ -244,8 +244,4 @@ async function healClick(
 }
 
 
-module.exports = {
-    isLocatorFailure,
-    getLocatorSuggestion,
-    healClick
-};
+module.exports = {isLocatorFailure,getLocatorSuggestion,healClick};
