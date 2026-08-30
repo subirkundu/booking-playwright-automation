@@ -106,10 +106,7 @@ Do not invent elements or attributes.
 
 
     const response =
-        await ai.models.generateContent({
-            model: 'gemini-3.6-flash',
-            contents: prompt
-        });
+        await ai.models.generateContent({model: 'gemini-3.6-flash',contents: prompt});
 
 
     const cleanedResponse =
