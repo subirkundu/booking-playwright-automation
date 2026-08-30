@@ -1,5 +1,4 @@
 function buildFailurePrompt(failureData) {
-
     return `
 You are an experienced QA automation engineer.
 
