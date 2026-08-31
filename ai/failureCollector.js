@@ -25,6 +25,7 @@ function extractFailureLocation(stack) {
 function getSourceContext(filePath, lineNumber) {
 
     if (!filePath || !lineNumber) {
+        
         return null;
     }
 
