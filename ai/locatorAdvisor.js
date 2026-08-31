@@ -141,9 +141,7 @@ async function healClick(
 
     } catch (error) {
 
-        console.log(
-            '\n========== AI HEALING TRIGGERED ==========\n'
-        );
+        console.log('\n========== AI HEALING TRIGGERED ==========\n');
 
 
         const failureData = {
@@ -225,14 +223,9 @@ async function healClick(
         }
 
 
-        await healedLocator.click({
-            timeout: 5000
-        });
+        await healedLocator.click({timeout: 5000});
 
-
-        console.log(
-            '✅ AI Locator Healing Successful!'
-        );
+        console.log('✅ AI Locator Healing Successful!');
 
 
         return {
