@@ -89,7 +89,5 @@ IMPORTANT RULES
 - Do not provide automatic code changes.
 - Return valid JSON only.
 `;
-
 }
-
 module.exports = {buildFailurePrompt};
