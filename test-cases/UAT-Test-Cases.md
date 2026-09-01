@@ -150,7 +150,6 @@ The origin and destination should be selected successfully.
 
 ### Expected Result
 The calculated departure and return dates should be selected successfully.
-
 ---
 
 ## TC-F03 — Recover Flight Search Selection
@@ -168,7 +167,6 @@ The calculated departure and return dates should be selected successfully.
 
 ### Expected Result
 The flight search should recover successfully and display flight results.
-
 ---
 
 ## TC-F04 — Identify Highest-Priced Flight
@@ -184,7 +182,6 @@ The flight search should recover successfully and display flight results.
 
 ### Expected Result
 The automation should correctly identify the flight with the highest price.
-
 ---
 
 ## TC-F05 — Validate Selected Flight
