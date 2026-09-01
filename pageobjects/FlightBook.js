@@ -116,6 +116,7 @@ class FlightBook {
         let highestPriceCard = null;
 
         for (let i = 0; i < cardCount; i++) {
+            
             const card = flightCards.nth(i);
 
             const priceText = await card.locator('.e2GB-price-text').textContent();
@@ -156,5 +157,4 @@ class FlightBook {
     }
 
 }
-
 module.exports = { FlightBook };
