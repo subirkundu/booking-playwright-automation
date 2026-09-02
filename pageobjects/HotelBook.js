@@ -83,10 +83,8 @@ class HotelBook {
             await ageDropdowns.nth(i + 1).selectOption(String(i + 1)); // Select ages: 1, 2, 3...
         }
 
-
         await this.button1.click(); // First click - text is "1"
         await this.page.waitForTimeout(300);
-
 
         for (let i = 0; i < 2; i++) { // Remaining clicks
             await this.room.click();
@@ -166,7 +164,6 @@ class HotelBook {
                 .getByTestId("availability-cta-btn")
                 .click()
         ]);
-
         await newPage.waitForLoadState();
         return newPage;
     }
