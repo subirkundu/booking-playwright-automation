@@ -104,8 +104,7 @@ class AttractionsBook {
         await this.page.waitForTimeout(2000);
         const values = await this.page.locator('.bc946a29db').allTextContents();
 
-        // Keep only "Current price from ..." values
-        // and convert them into numbers
+        // Keep only "Current price from ..." values and convert them into numbers
         const prices = values.filter(value => value.startsWith('Current price from')).map(value => Number(value.replace(/[^\d]/g, '')));
         console.log('Attraction Prices:', prices);
 
