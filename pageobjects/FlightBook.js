@@ -19,7 +19,6 @@ class FlightBook {
 
     }
     async goTo() {
-
         await this.page.goto('https://www.booking.com/');
     }
 
@@ -77,7 +76,6 @@ class FlightBook {
         }
 
         await returnLocator.click();
-
     }
 
     async reSelect() {
