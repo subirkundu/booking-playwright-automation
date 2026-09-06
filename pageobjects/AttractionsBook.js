@@ -136,7 +136,5 @@ class AttractionsBook {
         console.log('Title Verified! Both titles match: ' + newPageTitle.trim());
     }
 
-
 }
-
 module.exports = { AttractionsBook };
