@@ -366,9 +366,3 @@ Failure Detection
 AI Failure Analysis
        ↓
 Locator Failure Detection
-       ↓
-AI Locator Suggestion
-       ↓
-Locator Self-Healing
-       ↓
-Test Recovery
