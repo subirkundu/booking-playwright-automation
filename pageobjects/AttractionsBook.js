@@ -119,12 +119,7 @@ class AttractionsBook {
         const previousPageTitle = await card.getByTestId('card-title').textContent(); // Get title from the results page
 
         // Define the new-page promise BEFORE clicking
-        const [page1] = await Promise.all([
-
-            this.page.context().waitForEvent('page'),
-            card.getByTestId('card-title').click()
-
-        ]);
+        const [page1] = await Promise.all([this.page.context().waitForEvent('page'), card.getByTestId('card-title').click()]);
 
         await page1.waitForLoadState('networkidle');
         const newPageTitle = await page1.locator('h1:visible').textContent(); // Get title from the new page
