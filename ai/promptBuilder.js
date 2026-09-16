@@ -90,4 +90,5 @@ IMPORTANT RULES
 - Return valid JSON only.
 `;
 }
+
 module.exports = {buildFailurePrompt};
