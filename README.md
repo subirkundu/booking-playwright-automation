@@ -22,7 +22,7 @@ The framework currently provides:
 - Allure reporting
 - AI-powered failure analysis
 - AI-assisted locator identification
-- AI-powered locator self-healing
+- AI-powered locator self-healing.
 
 ---
 

@@ -353,22 +353,3 @@ The framework should successfully recover from the locator mismatch and continue
 | **Total** | **19** |
 
 ---
-
-# 🎯 Automation Coverage
-
-These test cases represent the major flows currently automated in the Playwright framework.
-
-The AI-related test cases are specifically intended to demonstrate:
-
-```text
-Failure Detection
-       ↓
-AI Failure Analysis
-       ↓
-Locator Failure Detection
-       ↓
-AI Locator Suggestion
-       ↓
-Locator Self-Healing
-       ↓
-Test Recovery

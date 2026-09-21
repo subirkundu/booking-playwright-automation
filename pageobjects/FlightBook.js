@@ -151,7 +151,7 @@ class FlightBook {
 
         // Verify the selected flight price is unchanged
         expect(nextPagePrice).toBe(highestPrice);
-        console.log("Both Price Matched!!");
+        console.log("Both Price Matched!!"); //test
     }
 
 }
