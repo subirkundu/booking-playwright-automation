@@ -72,7 +72,9 @@ class AttractionsBook {
 
         await startDateLocator.click();
 
-
+        // Select End Date
+        // CHANGED: Same fix here: target the actual selectable checkbox instead of the ambiguous aria-label.
+        const endDateLocator = this.page.getByRole('checkbox', {name: endDateLabel});
 
         while (!(await endDateLocator.isVisible())) {
             await this.page.getByRole('button', { name: 'Next month' }).click();
