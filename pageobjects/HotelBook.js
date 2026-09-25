@@ -8,7 +8,7 @@ class HotelBook {
         this.dismiss1 = page.getByRole('button', { name: 'Dismiss sign-in info.' });
 
         this.going = page.getByPlaceholder("Where are you going?"); //For Desktop
-        this.hardLoc = page.locator('.efbfd2b849').first();
+        this.hardLoc = page.locator('div').filter({ hasText: /^Cox's BazarBangladesh$/ }).first();
         this.flexLoc = page.getByRole('tab', { name: "I'm flexible" });
         // Temporary: intentionally broken locator for AI healing test
         this.week1 = page.getByText('A Week', { exact: true });
