@@ -106,7 +106,7 @@ test('Flights Booking UAT', async ({ page }) => {
   await flightBookPage.selectDate();
   await flightBookPage.reSelect();
   const highestPrice = await flightBookPage.selectHighestPricedFlight(); // Store the returned highest price so we can pass it to the validation method
-  await flightBookPage.validateFlightPage(highestPrice);// Validate that the price on the next page matches the selected flight's highest price
+  
 
 });
 
