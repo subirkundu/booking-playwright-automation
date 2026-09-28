@@ -11,7 +11,7 @@ class HotelBook {
         this.hardLoc = page.locator('div').filter({ hasText: /^Cox's BazarBangladesh$/ }).first();
         this.flexLoc = page.getByRole('tab', { name: "I'm flexible" });
         // Temporary: intentionally broken locator for AI healing test
-        this.week1 = page.getByText('A Week', { exact: true });
+        this.week1 = page.getByText('A week', { exact: true });
         
         // Original working locator:
         // this.week1 = page.getByText('A week', { exact: true });
