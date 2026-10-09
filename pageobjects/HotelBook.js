@@ -73,7 +73,6 @@ class HotelBook {
         await this.child1.click(); // First child
         await this.page.waitForTimeout(300);
 
-
         for (let i = 1; i < numberOfChildren; i++) { // Remaining children
             await this.rechild.click();
             await this.page.waitForTimeout(300);

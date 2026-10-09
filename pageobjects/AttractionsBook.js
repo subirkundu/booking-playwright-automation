@@ -15,7 +15,6 @@ class AttractionsBook {
         this.night = page.getByText('Evening and night');
         this.bReview = page.getByText('Best reviewed', { exact: true });
         //Filters End
-
     }
 
     async goTo() {

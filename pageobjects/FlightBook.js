@@ -2,7 +2,6 @@ const { expect } = require('@playwright/test');
 
 class FlightBook {
     constructor(page) {
-
         this.page = page;
         this.dismiss2 = page.getByRole('button', { name: 'Dismiss sign-in info.' });
         this.fClick = page.locator("#flights");
@@ -16,7 +15,6 @@ class FlightBook {
         this.canSelect = page.getByRole('option', { name: 'Toronto, Ontario, Canada' }).locator('[id="0"]'); // Need AI Powred here as well. Sometimes it's moves too first and got the option failed to check
         this.kolSelect = page.locator('[id="0"]');
         this.search = page.getByRole('button', { name: 'Search' });
-
     }
     async goTo() {
         await this.page.goto('https://www.booking.com/');
