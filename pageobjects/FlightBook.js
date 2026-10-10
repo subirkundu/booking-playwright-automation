@@ -1,7 +1,9 @@
 const { expect } = require('@playwright/test');
 
 class FlightBook {
+
     constructor(page) {
+
         this.page = page;
         this.dismiss2 = page.getByRole('button', { name: 'Dismiss sign-in info.' });
         this.fClick = page.locator("#flights");
@@ -21,6 +23,7 @@ class FlightBook {
     }
 
     async searchFlight() {
+
         await this.dismiss2.click();
         await this.fClick.click();
         await this.rValue.click();
@@ -153,4 +156,5 @@ class FlightBook {
     }
 
 }
+
 module.exports = { FlightBook };

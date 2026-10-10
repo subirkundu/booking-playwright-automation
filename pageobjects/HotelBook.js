@@ -2,7 +2,9 @@ const { expect } = require('@playwright/test');
 const { healClick } = require('../ai/locatorAdvisor');
 
 class HotelBook {
+
     constructor(page) {
+
         this.page = page;
 
         this.dismiss1 = page.getByRole('button', { name: 'Dismiss sign-in info.' });
@@ -45,12 +47,15 @@ class HotelBook {
     }
 
     async goTo() {
+
         await this.page.goto('https://www.booking.com/');
         await expect(this.page).toHaveTitle(/Booking.com/);
         console.log('Verified Successfully!');
     }
 
+
     async miscSTeps() {
+
         await this.dismiss1.click();
         await this.going.pressSequentially("Cox's Bazar");
         await this.page.waitForTimeout(2000);
@@ -70,6 +75,7 @@ class HotelBook {
     }
 
     async childRoom(numberOfChildren, ageDropdowns) {
+        
         await this.child1.click(); // First child
         await this.page.waitForTimeout(300);
 
