@@ -1,6 +1,7 @@
 const { expect } = require('@playwright/test');
 
 class AttractionsBook {
+
     constructor(page) {
         this.page = page;
         this.dismiss3 = page.getByRole('button', { name: 'Dismiss sign-in info.' });
@@ -22,6 +23,7 @@ class AttractionsBook {
     }
 
     async searchAttraction() {
+
         await this.dismiss3.click();
         await this.attractions.click();
         await this.page.waitForLoadState('networkidle'); // Wait for page to fully load
@@ -31,6 +33,7 @@ class AttractionsBook {
         await this.destination.click();
         await this.destination.pressSequentially('Big Ben', { delay: 100 });
         await this.bigB.click();
+
     }
 
     async selectDate() {
@@ -131,4 +134,5 @@ class AttractionsBook {
     }
 
 }
+
 module.exports = { AttractionsBook };
