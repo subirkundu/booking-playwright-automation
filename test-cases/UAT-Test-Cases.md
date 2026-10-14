@@ -31,6 +31,7 @@ The test cases are grouped into:
 7. Click Search.
 
 ### Expected Result
+
 Hotel search results should be displayed successfully.
 
 ---
@@ -132,6 +133,7 @@ The price displayed on the property page should match the lowest price identifie
 4. Select `Kolkata, India` as the destination.
 
 ### Expected Result
+
 The origin and destination should be selected successfully.
 
 ---
@@ -149,6 +151,7 @@ The origin and destination should be selected successfully.
 5. Select the return date.
 
 ### Expected Result
+
 The calculated departure and return dates should be selected successfully.
 ---
 
@@ -166,6 +169,7 @@ The calculated departure and return dates should be selected successfully.
 6. Perform the search again.
 
 ### Expected Result
+
 The flight search should recover successfully and display flight results.
 ---
 
