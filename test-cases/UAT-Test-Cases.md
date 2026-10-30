@@ -188,7 +188,7 @@ The flight search should recover successfully and display flight results.
 The automation should correctly identify the flight with the highest price.
 ---
 
-## TC-F05 — Validate Selected Flight
+## TC-F05 — Validate Selected Flight's
 
 **Module:** Flight Booking  
 **Priority:** High
@@ -225,7 +225,7 @@ The selected attraction should be accepted successfully.
 
 ---
 
-## TC-A02 — Select Attraction Dates
+## TC-A02 — Select Attraction Date's
 
 **Module:** Attractions  
 **Priority:** High
@@ -274,7 +274,7 @@ The automation should correctly identify the attraction with the lowest availabl
 
 ---
 
-## TC-A05 — Validate Attraction Details
+## TC-A05 — Validate Attraction Detail's
 
 **Module:** Attractions  
 **Priority:** High
