@@ -65,6 +65,7 @@ class AttractionsBook {
 
         // CHANGED: Use getByRole('checkbox') instead of getByLabel().
         // Reason: Booking.com has two elements with the same aria-label for a date: gridcell + checkbox. getByLabel() matched both and caused a strict-mode error.
+        
         const startDateLocator = this.page.getByRole('checkbox', {name: startDateLabel});
 
         while (!(await startDateLocator.isVisible())) {
